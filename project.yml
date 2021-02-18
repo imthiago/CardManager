@@ -16,6 +16,9 @@ targets:
       - target: CardManagerInfrastructure
       - target: CardManagerPresentation
       - target: CardManagerApplication
+    postCompileScripts:
+      - script: ${PODS_ROOT}/SwiftLint/swiftlint
+      - name: Swiftlint
   CardManager-iOS-Tests:
     type: bundle.unit-test
     platform: iOS
@@ -24,6 +27,9 @@ targets:
       - path: CardManagerTests
     dependencies:
       - target: CardManager
+    postCompileScripts:
+      - script: ${PODS_ROOT}/SwiftLint/swiftlint
+      - name: Swiftlint
   CardManager-iOS-UITests:
     type: bundle.ui-testing
     platform: iOS
@@ -31,12 +37,18 @@ targets:
       - path: CardManagerUITests
     dependencies:
       - target: CardManager
+    postCompileScripts:
+      - script: ${PODS_ROOT}/SwiftLint/swiftlint
+      - name: Swiftlint
   CardManagerDomain:
     type: framework
     platform: iOS
     deploymentTarget: "14.4"
     sources:
       - path: CardManagerDomain
+    postCompileScripts:
+      - script: ${PODS_ROOT}/SwiftLint/swiftlint
+      - name: Swiftlint
   CardManagerPresentation:
     type: framework
     platform: iOS
@@ -45,6 +57,9 @@ targets:
       - path: CardManagerPresentation
     dependencies:
       - target: CardManagerApplication
+    postCompileScripts:
+      - script: ${PODS_ROOT}/SwiftLint/swiftlint
+      - name: Swiftlint
   CardManagerApplication:
     type: framework
     platform: iOS
@@ -53,6 +68,9 @@ targets:
       - path: CardManagerApplication
     dependencies:
       - target: CardManagerInfrastructure
+    postCompileScripts:
+      - script: ${PODS_ROOT}/SwiftLint/swiftlint
+      - name: Swiftlint
   CardManagerInfrastructure:
     type: framework
     platform: iOS
@@ -61,3 +79,6 @@ targets:
       - path: CardManagerInfrastructure
     dependencies:
       - target: CardManagerDomain
+    postCompileScripts:
+      - script: ${PODS_ROOT}/SwiftLint/swiftlint
+      - name: Swiftlint
