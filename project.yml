@@ -11,6 +11,11 @@ targets:
     deploymentTarget: "14.4"
     sources:
       - path: CardManager
+    dependencies:
+      - target: CardManagerDomain
+      - target: CardManagerInfrastructure
+      - target: CardManagerPresentation
+      - target: CardManagerApplication
   CardManager-iOS-Tests:
     type: bundle.unit-test
     platform: iOS
@@ -38,12 +43,16 @@ targets:
     deploymentTarget: "14.4"
     sources:
       - path: CardManagerPresentation
+    dependencies:
+      - target: CardManagerApplication
   CardManagerApplication:
     type: framework
     platform: iOS
     deploymentTarget: "14.4"
     sources:
       - path: CardManagerApplication
+    dependencies:
+      - target: CardManagerInfrastructure
   CardManagerInfrastructure:
     type: framework
     platform: iOS
