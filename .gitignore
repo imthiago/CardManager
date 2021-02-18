@@ -94,3 +94,4 @@ CardManager.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
 .DS_Store
 *.lock
 Pods/
+CardManager.xcworkspace/
