@@ -1,0 +1,28 @@
+name: CardManager
+options:
+  createIntermediateGroups: true
+  indentWidth: 2
+  tabWidth: 2
+  bundleIdPrefix: "com.imthiago"
+targets:
+  CardManager:
+    type: application
+    platform: iOS
+    deploymentTarget: "14.4"
+    sources:
+      - path: CardManager
+  CardManager-iOS-Tests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "14.4"
+    sources:
+      - path: CardManagerTests
+    dependencies:
+      - target: CardManager
+  CardManager-iOS-UITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: CardManagerUITests
+    dependencies:
+      - target: CardManager
