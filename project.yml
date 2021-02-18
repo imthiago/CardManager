@@ -50,3 +50,5 @@ targets:
     deploymentTarget: "14.4"
     sources:
       - path: CardManagerInfrastructure
+    dependencies:
+      - target: CardManagerDomain
