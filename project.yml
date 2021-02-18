@@ -26,3 +26,27 @@ targets:
       - path: CardManagerUITests
     dependencies:
       - target: CardManager
+  CardManagerDomain:
+    type: framework
+    platform: iOS
+    deploymentTarget: "14.4"
+    sources:
+      - path: CardManagerDomain
+  CardManagerPresentation:
+    type: framework
+    platform: iOS
+    deploymentTarget: "14.4"
+    sources:
+      - path: CardManagerPresentation
+  CardManagerApplication:
+    type: framework
+    platform: iOS
+    deploymentTarget: "14.4"
+    sources:
+      - path: CardManagerApplication
+  CardManagerInfrastructure:
+    type: framework
+    platform: iOS
+    deploymentTarget: "14.4"
+    sources:
+      - path: CardManagerInfrastructure
