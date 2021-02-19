@@ -7,11 +7,16 @@ target 'CardManager' do
 
   # Pods for CardManager
   pod 'SwiftLint'
+  pod "PromiseKit", "~> 6.8"
+  pod 'Swinject'
+  pod "COSTouchVisualizer"
+  pod 'Charts'
 
   target 'CardManager-iOS-Tests' do
     inherit! :search_paths
     # Pods for testing
     pod 'SwiftLint'
+    
 
   end
 
@@ -56,5 +61,8 @@ target 'CardManagerPresentation' do
 
   # Pods for CardManagerPresentation
   pod 'SwiftLint'
+  pod 'IQKeyboardManagerSwift'
+  pod 'lottie-ios'
+  pod 'FSCalendar'
 
 end
