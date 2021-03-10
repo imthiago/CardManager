@@ -1,10 +1,12 @@
 #!/bin/bash
 
-echo "Updating brew..."
+echo "Updating brew...🏃‍♂️"
 brew update
 
-echo "Generating xcode files..."
+echo "Generating xcode files...🏃‍♂️"
 xcodegen
 
-echo "Installing CocoaPods dependencies..."
+echo "Installing CocoaPods dependencies...🏃‍♂️"
 pod install
+
+echo "Done! You can open the *.xcworkspace file 🚀"
