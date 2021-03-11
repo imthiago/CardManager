@@ -93,3 +93,15 @@ targets:
     postCompileScripts:
       - script: ${PODS_ROOT}/SwiftLint/swiftlint
       - name: Swiftlint
+  CardManagerInfrastructureTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "14.4"
+    sources:
+      - path: CardManagerInfrastructureTests
+    dependencies:
+      - target: CardManagerInfrastructure
+      - target: CardManagerDomain
+    postCompileScripts:
+      - script: ${PODS_ROOT}/SwiftLint/swiftlint
+      - name: Swiftlint

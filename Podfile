@@ -63,6 +63,15 @@ target 'CardManagerInfrastructure' do
 
 end
 
+target 'CardManagerInfrastructureTests' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for CardManagerInfrastructure
+  pod 'SwiftLint'
+
+end
+
 target 'CardManagerPresentation' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
