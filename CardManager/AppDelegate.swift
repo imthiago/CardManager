@@ -6,17 +6,26 @@
 //
 
 import UIKit
+import CardManagerPresentation
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var signInCoordinator: SignInCoordinator?
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
         window = UIWindow(frame: UIScreen.main.bounds)
-        let launchViewController = LaunchScreenViewController()
-        window?.rootViewController = launchViewController
+
+        let navigationController = UINavigationController()
+
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+
+        signInCoordinator = SignInCoordinator(navigationController)
+        signInCoordinator?.start()
+
         return true
     }
 }
