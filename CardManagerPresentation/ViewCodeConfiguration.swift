@@ -11,6 +11,7 @@ protocol ViewCodable {
     func buildHierarchy()
     func setupConstraints()
     func configureViews()
+    func configureNavigation()
 }
 
 extension ViewCodable {
@@ -18,5 +19,6 @@ extension ViewCodable {
         buildHierarchy()
         setupConstraints()
         configureViews()
+        configureNavigation()
     }
 }

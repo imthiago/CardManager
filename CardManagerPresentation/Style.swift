@@ -14,6 +14,7 @@ class Style {
         case subtitle
         case body
         case button
+        case textField
     }
 
     struct TextAttributes {
@@ -83,5 +84,11 @@ class Style {
 
         navigationBar.tintColor = attibutes.color
         navigationBar.barStyle = preferredStatusBarStyle == .default ? .default : .black
+    }
+
+    func apply(textStyle: TextStyle = .textField, to textField: UITextField) {
+        let attributes = attributesForStyle(textStyle)
+        textField.font = attributes.font
+        textField.textColor = attributes.color
     }
 }

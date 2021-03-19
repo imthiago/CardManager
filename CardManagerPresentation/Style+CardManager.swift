@@ -28,6 +28,8 @@ private extension Style.TextStyle {
             return Style.TextAttributes(font: .cardManagerBody, color: .black, backgroundColor: .white)
         case .button:
             return Style.TextAttributes(font: .cardMangerSubtitle, color: .white, backgroundColor: .cardManagerRed)
+        case .textField:
+            return Style.TextAttributes(font: .cardManagerTextField, color: .white)
         }
     }
 }
@@ -53,5 +55,8 @@ extension UIFont {
     }
     static var cardManagerBody: UIFont {
         return UIFont.systemFont(ofSize: 14)
+    }
+    static var cardManagerTextField: UIFont {
+        return UIFont.systemFont(ofSize: 12)
     }
 }
