@@ -5,6 +5,7 @@
 //  Created by Thiago Oliveira on 13/03/21.
 //
 
+import Foundation
 import UIKit
 
 class Style {
@@ -53,5 +54,35 @@ class Style {
 
     func backgroundColor(fot style: TextStyle) -> UIColor? {
         return attributesForStyle(style).backgroundColor
+    }
+
+    // MARK: - Convenience apply style methods
+    func apply(textStyle: TextStyle, to label: UILabel) {
+        let attributes = attributesForStyle(textStyle)
+        label.font = attributes.font
+        label.textColor = attributes.color
+        label.backgroundColor = attributes.backgroundColor
+    }
+
+    func apply(textStyle: TextStyle = .button, to button: UIButton) {
+        let attributes = attributesForStyle(textStyle)
+        button.setTitleColor(attributes.color, for: .normal)
+        button.titleLabel?.font = attributes.font
+        button.backgroundColor = attributes.backgroundColor
+    }
+
+    func apply(textStyle: TextStyle = .navigationBar, to navigationBar: UINavigationBar) {
+        let attibutes = attributesForStyle(textStyle)
+        navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.font: attibutes.font,
+            NSAttributedString.Key.foregroundColor: attibutes.color
+        ]
+
+        if let color = attibutes.backgroundColor {
+            navigationBar.barTintColor = color
+        }
+
+        navigationBar.tintColor = attibutes.color
+        navigationBar.barStyle = preferredStatusBarStyle == .default ? .default : .black
     }
 }
