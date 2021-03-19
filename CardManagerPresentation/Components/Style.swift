@@ -5,7 +5,6 @@
 //  Created by Thiago Oliveira on 13/03/21.
 //
 
-import Foundation
 import UIKit
 
 class Style {
