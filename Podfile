@@ -90,6 +90,7 @@ target 'CardManagerPresentation' do
   pod 'IQKeyboardManagerSwift'
   pod 'lottie-ios'
   pod 'FSCalendar'
+  pod 'MaterialTextField', '~> 1.0'
 
 end
 
