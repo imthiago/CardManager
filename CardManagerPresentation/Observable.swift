@@ -5,7 +5,7 @@
 //  Created by Thiago Oliveira on 18/03/21.
 //
 
-class Property<Type> {
+class Observable<Type> {
     private var subscribeAction: (Type?) -> Void = { _ in }
 
     func subscribe(_ closure: @escaping (Type?) -> Void) {

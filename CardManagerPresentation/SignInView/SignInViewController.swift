@@ -26,6 +26,14 @@ class SignInViewController: UIViewController {
         BindingTextField(frame: .zero)
     }()
 
+    private lazy var signInButton: UIButton = {
+        UIButton(frame: .zero)
+    }()
+
+    private lazy var signUpButton: UIButton = {
+        UIButton(frame: .zero)
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -41,6 +49,8 @@ extension SignInViewController: ViewCodable & UITextFieldDelegate {
         view.addSubview(backgroundView)
         view.addSubview(emailTextField)
         view.addSubview(passwordTextField)
+        view.addSubview(signInButton)
+        view.addSubview(signUpButton)
     }
 
     func setupConstraints() {
@@ -59,6 +69,18 @@ extension SignInViewController: ViewCodable & UITextFieldDelegate {
         passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive = true
         passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20).isActive = true
         passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24).isActive = true
+
+        signInButton.translatesAutoresizingMaskIntoConstraints = false
+        signInButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive = true
+        signInButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 40).isActive = true
+        signInButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24).isActive = true
+        signInButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+
+        signUpButton.translatesAutoresizingMaskIntoConstraints = false
+        signUpButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24).isActive = true
+        signUpButton.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 77).isActive = true
+        signUpButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24).isActive = true
+        signUpButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
 
     }
 
@@ -79,6 +101,13 @@ extension SignInViewController: ViewCodable & UITextFieldDelegate {
         passwordTextField.font = .systemFont(ofSize: 14)
         passwordTextField.isSecureTextEntry = true
         passwordTextField.keyboardDistanceFromTextField = 50
+
+        signInButton.backgroundColor = .rgb(red: 255, green: 120, blue: 50)
+        signInButton.setTitle("ENTRAR", for: .normal)
+        signInButton.titleLabel?.font = .boldSystemFont(ofSize: 16)
+
+        signUpButton.setTitle("SOLICITAR CADASTRO", for: .normal)
+        signUpButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
     }
 
     func configureNavigation() {
