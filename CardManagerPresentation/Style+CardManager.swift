@@ -44,6 +44,9 @@ extension UIColor {
     static var cardManagerBlue: UIColor {
         return UIColor(red: 0, green: 0.2, blue: 0.9, alpha: 1)
     }
+    static var cardManagerOrange: UIColor {
+        return UIColor(red: 255/255, green: 120/255, blue: 50/255, alpha: 1)
+    }
 }
 
 extension UIFont {

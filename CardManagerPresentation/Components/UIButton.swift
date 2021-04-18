@@ -18,7 +18,7 @@ class DefaultButton: UIButton {
 
     init(title: String) {
         super.init(frame: .zero)
-        backgroundColor = .purple
+        backgroundColor = .cardManagerOrange
         setTitle(title, for: .normal)
         setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)

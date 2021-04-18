@@ -27,7 +27,7 @@ class SignInViewController: UIViewController {
     }()
 
     private lazy var signInButton: UIButton = {
-        UIButton(frame: .zero)
+        DefaultButton(title: "ENTRAR")
     }()
 
     private lazy var signUpButton: UIButton = {
@@ -101,10 +101,6 @@ extension SignInViewController: ViewCodable & UITextFieldDelegate {
         passwordTextField.font = .systemFont(ofSize: 14)
         passwordTextField.isSecureTextEntry = true
         passwordTextField.keyboardDistanceFromTextField = 50
-
-        signInButton.backgroundColor = .rgb(red: 255, green: 120, blue: 50)
-        signInButton.setTitle("ENTRAR", for: .normal)
-        signInButton.titleLabel?.font = .boldSystemFont(ofSize: 16)
 
         signUpButton.setTitle("SOLICITAR CADASTRO", for: .normal)
         signUpButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
