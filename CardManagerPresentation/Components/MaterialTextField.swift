@@ -19,6 +19,9 @@ class MaterialTextField: MFTextField {
     init(placeholder: String, color: UIColor) {
         super.init(frame: .zero)
         self.placeholder = placeholder
-        self.tintColor = color
+        tintColor = color
+        layer.cornerRadius = 8
+        layer.masksToBounds = true
     }
 }
+
