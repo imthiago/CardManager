@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class SignInViewController: UIViewController {
 
@@ -70,12 +71,14 @@ extension SignInViewController: ViewCodable & UITextFieldDelegate {
             .init(string: "E-MAIL", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         emailTextField.font = .systemFont(ofSize: 14)
         emailTextField.keyboardType = .emailAddress
+        emailTextField.keyboardDistanceFromTextField = 100
 
         passwordTextField.tintColor = .white
         passwordTextField.attributedPlaceholder =
             .init(string: "SENHA", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         passwordTextField.font = .systemFont(ofSize: 14)
         passwordTextField.isSecureTextEntry = true
+        passwordTextField.keyboardDistanceFromTextField = 50
     }
 
     func configureNavigation() {
