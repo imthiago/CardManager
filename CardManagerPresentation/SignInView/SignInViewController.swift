@@ -42,6 +42,15 @@ class SignInViewController: UIViewController {
         super.viewWillAppear(animated)
         applyViewCode()
     }
+
+    // MARK: - Actions
+    @objc func didTapSignIn() {
+        print("SignIn")
+    }
+
+    @objc func didTapSignUp() {
+        print("SignUp")
+    }
 }
 
 extension SignInViewController: ViewCodable & UITextFieldDelegate {
@@ -89,6 +98,7 @@ extension SignInViewController: ViewCodable & UITextFieldDelegate {
         backgroundView.contentMode = .redraw
 
         emailTextField.tintColor = .white
+        emailTextField.textColor = .white
         emailTextField.attributedPlaceholder =
             .init(string: "E-MAIL", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         emailTextField.font = .systemFont(ofSize: 14)
@@ -96,14 +106,18 @@ extension SignInViewController: ViewCodable & UITextFieldDelegate {
         emailTextField.keyboardDistanceFromTextField = 100
 
         passwordTextField.tintColor = .white
+        passwordTextField.textColor = .white
         passwordTextField.attributedPlaceholder =
             .init(string: "SENHA", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         passwordTextField.font = .systemFont(ofSize: 14)
         passwordTextField.isSecureTextEntry = true
         passwordTextField.keyboardDistanceFromTextField = 50
 
+        signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
+
         signUpButton.setTitle("SOLICITAR CADASTRO", for: .normal)
         signUpButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
+        signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
     }
 
     func configureNavigation() {
