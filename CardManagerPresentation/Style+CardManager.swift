@@ -7,33 +7,6 @@
 
 import UIKit
 
-extension Style {
-    static var cardManager: Style {
-        return Style(backgroundColor: .black,
-                     preferredStatusBarStyle: .lightContent,
-                     attributesForStyle: { $0.cardManagerAttributes })
-    }
-}
-
-private extension Style.TextStyle {
-    var cardManagerAttributes: Style.TextAttributes {
-        switch self {
-        case .navigationBar:
-            return Style.TextAttributes(font: .cardManagerTitle, color: .cardManagerGreen, backgroundColor: .black)
-        case .title:
-            return Style.TextAttributes(font: .cardManagerTitle, color: .cardManagerGreen)
-        case .subtitle:
-            return Style.TextAttributes(font: .cardMangerSubtitle, color: .cardManagerBlue)
-        case .body:
-            return Style.TextAttributes(font: .cardManagerBody, color: .black, backgroundColor: .white)
-        case .button:
-            return Style.TextAttributes(font: .cardMangerSubtitle, color: .white, backgroundColor: .cardManagerRed)
-        case .textField:
-            return Style.TextAttributes(font: .cardManagerTextField, color: .white)
-        }
-    }
-}
-
 extension UIColor {
     static var cardManagerRed: UIColor {
         return UIColor(red: 1, green: 0.1, blue: 0.1, alpha: 1)

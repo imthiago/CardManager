@@ -24,4 +24,3 @@ class MaterialTextField: MFTextField {
         layer.masksToBounds = true
     }
 }
-
